@@ -1,11 +1,27 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
+import { getUnProducto } from '../../asyncmock'
+import ItemList from '../ItemList/ItemList'
 
-const ItemListContainer = ({greeting}) => {
-    const saludo= alert (greeting);
+const ItemListContainer = () => {
+    const [productos, setProducto] =useState([]);
 
+    useEffect(()=>{
+        getUnProducto()
+    .then(respuesta =>
+            setProducto(respuesta)
+        )
+    .catch(
+        console.log("Error en cargar productos")
+    )
+},[])
+    
 return (
-    <div>{saludo}</div>
+    <div>
+        <h2>Mis productos</h2>
+        <ItemList productos={productos}/>
+    </div>
 )
 }
 
-export default ItemListContainer
+export default ItemListContainer;

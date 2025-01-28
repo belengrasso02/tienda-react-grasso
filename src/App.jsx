@@ -1,13 +1,30 @@
 import React from 'react'
-import NavBar from './components/NavBar/NavBar'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import './App.css'
+import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer' ;
+import ADeFruta from './components/ADeFruta/ADeFruta';
+import ADeChocolate from './components/ADeChocolate/ADeChocolate';
+import ADeDulceDeLeche from './components/ADeDulceDeLeche/ADeDulceDeLeche';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const App = () => {
   return (
     <div>
-      <ItemListContainer/>
-        <NavBar greeting = "¡Bienvenido a mi tienda!"/>
-      <img src="https://i.pinimg.com/736x/84/e1/82/84e18249c05fed431c68f62dd0855c1a.jpg" alt="Alfajor" ></img>
+      <BrowserRouter/>
+      <Routes/>
+      <Route path='/alfajoresdefruta' element = {<ADeFruta/>} />
+      <Route path='/alfajoresdechocolate' element = {<ADeChocolate/>} />
+      <Route path='alfajoresdedulcedeleche'element = {<ADeDulceDeLeche/>} />
+
+        <NavBar/>
+      
+      <Routes/>
+      <BrowserRouter/>
+
+
+        <ItemListContainer/>
+        <ItemDetailContainer/>
     </div>
   )
 }

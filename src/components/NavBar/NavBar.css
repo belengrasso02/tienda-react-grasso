@@ -9,7 +9,9 @@ header{
 header h1{
     color: rgb(128, 85, 32);
 }
-
+h1{
+    padding: 1rem;
+}
 li{
     display: inline-block;
     padding: 10px;

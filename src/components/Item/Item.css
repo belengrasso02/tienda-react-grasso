@@ -1,0 +1,16 @@
+.producto{
+    background-color: #f4f4f4;
+    width: 18.75rem;
+    border: 2px rgb(74, 47, 47) solid;
+    display: flex;
+    margin: 1.875rem;
+}
+.producto img{
+    width: 6.25rem;
+}
+.producto button{
+    width: .625rem;
+}
+.botonAgregar{
+    background-color: beige;
+}
